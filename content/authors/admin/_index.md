@@ -1,6 +1,6 @@
 ---
 # Display name
-name: Nelson Bighetti
+name: Patrick Blanchenay
 
 # Username (this should match the folder name)
 authors:
@@ -10,32 +10,39 @@ authors:
 superuser: true
 
 # Role/position
-role: Professor of Artificial Intelligence
+role: Assistant Professor, Teaching Stream
 
 # Organizations/Affiliations
 organizations:
-- name: Stanford University
-  url: ""
+- name: Dept of Economics, U of Toronto
+  url: "https://www.economics.utoronto.ca"
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: I teach econometrics and microeconomics at University of Toronto.
 
-interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+#interests:
+#- Artificial Intelligence
+#- Computational Linguistics
+#- Information Retrieval
+#
+
+currentteaching:
+  currentcourses:
+    - currentcourse: ECO220 Intro to Data Analysis & Applied Econometrics
+    - currentcourse: ECO372 Data Analysis and Applied Econometrics in Practice
+
 
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  - course: PhD in Economics
+    institution: London School of Economics
+    year: 2014
+  - course: MRes Political Thought
+    institution: Sciences Po Paris
+    year: 2005
+  - course: MSc Management
+    institution: HEC Paris
+    year: 2004
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -45,15 +52,15 @@ social:
 - icon: envelope
   icon_pack: fas
   link: '#contact'  # For a direct email link, use "mailto:test@example.org".
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
-- icon: google-scholar
-  icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
-- icon: github
-  icon_pack: fab
-  link: https://github.com/gcushen
+#- icon: twitter
+#  icon_pack: fab
+#  link: https://twitter.com/GeorgeCushen
+#- icon: google-scholar
+#  icon_pack: ai
+#  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+#- icon: github
+#  icon_pack: fab
+#  link: https://github.com/gcushen
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -64,12 +71,9 @@ social:
 email: ""
 
 # Organizational groups that you belong to (for People widget)
-#   Set this to `[]` or comment out if you are not using People widget.
-user_groups:
-- Researchers
-- Visitors
+#   Set this to `[]` or comment out if you are not using People widget.  
+# user_groups:
+# - Researchers
+# - Visitors
 ---
-
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+I am an assistant professor teaching stream at University of Toronto's [Department of Economics](http://www.economics.utoronto.ca). I teach empirical methods (econometrics, data analysis) and microeconomics.  Before joining University of Toronto, I worked at the [OECD](https://www.oecd.org), in particular on productivity dispersion and wage inequality.
