@@ -19,9 +19,9 @@ weight = 60
 * [Syllabus 2019-20](eco220/ECO220Y_syllabus_Blanchenay_2019-20.pdf)
 
 ## ECO372H Data Analysis and Applied Econometrics in Practice
-* [ECO372H1F (Fall 2019) on Quercus](https://q.utoronto.ca/courses/106391)
-* [Syllabus Fall 2019](eco372/ECO372H1_Blanchenay_Fall_2019_syllabus.pdf)
-* Syllabus Winter 2020 (forthcoming)
+* ECO372H1S (Winter 2020):  [Quercus site](https://q.utoronto.ca/courses/134701) &mdash;   [Syllabus](eco372/ECO372H1_Blanchenay_Winter_2020_syllabus.pdf)
+* ECO372H1F (Fall 2019):  [Quercus site](https://q.utoronto.ca/courses/106391) &mdash;  [Syllabus](eco372/ECO372H1_Blanchenay_Fall_2019_syllabus.pdf)
+
 
 ## Previous years
 * ECO206Y Microeconomic Theory
