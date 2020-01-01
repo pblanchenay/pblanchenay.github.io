@@ -21,7 +21,7 @@
 [[main]]
   name = "CV"
   url = "files/Blanchenay_CV_Teaching.pdf"
-  weight = 65
+  weight = 15
 
 [[main]]
   name = "Contact"
