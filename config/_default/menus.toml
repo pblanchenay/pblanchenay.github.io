@@ -21,12 +21,12 @@
 [[main]]
   name = "CV"
   url = "files/Blanchenay_CV_Teaching.pdf"
-  weight = 45
+  weight = 65
 
 [[main]]
   name = "Contact"
   url = "#contact"
-  weight = 60
+  weight = 80
 
 
 # Link to a PDF of your resume/CV from the menu.
