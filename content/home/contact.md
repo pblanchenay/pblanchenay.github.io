@@ -35,3 +35,6 @@ Canada
 
  [patrick.blanchenay@utoronto.ca](mailto:patrick.blanchenay@utoronto.ca) 
 (Students, please check "Email Policy" in your course syllabus.)
+
+## <i class="fa fa-scroll"></i> Recommendation letters
+Instructions for [academic references](academicreferences/).
