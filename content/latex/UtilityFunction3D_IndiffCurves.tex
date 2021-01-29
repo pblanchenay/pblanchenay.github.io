@@ -1,0 +1,108 @@
+%   ===================================================
+%	Showing in 3D a utility function with 2 utility 
+%       levels, and the corresponding indifference
+%       curves on a 2D plane
+%   Author: Patrick Blanchenay
+%   ===================================================
+
+\documentclass{standalone}
+% =============================================
+\usepackage{tikz}               % to draw things
+\usetikzlibrary{intersections}  % to compute intersections automatically 
+\usepackage{pgfplots}           % to draw plots & curves
+\pgfplotsset{compat=1.8}
+% =============================================
+\begin{document}
+
+% ========= Things to change ======================
+\def\utilityfunction{x^.5 * y^.5} % Cobb-Douglas
+\def\utilityfuncitonEQ{\sqrt{x_1 x_2}} % How the equation would be displayed
+\def\xonemax{10} % max value of x1
+\def\xtwomax{10} % max value of x2
+\def\utilitylevelone{2}
+\def\utilityleveltwo{6}
+
+\begin{tikzpicture}
+
+% ======= GRAPH HAPPENS HERE ===========
+\begin{axis}[ 
+ 	axis lines=middle,
+	xlabel=$x_1$, xlabel style={right },
+ 	xmin=0,	xmax=\xonemax, xtick={0,\xonemax}, enlarge x limits={upper=0.1}, domain=0:\xonemax,
+ 	ylabel=$x_2$, ylabel style={above },
+ 	ymin=0,ymax=\xtwomax, ytick={0,\xtwomax}, enlarge y limits={upper=0.1}, y domain=0:\xtwomax,
+ 	zlabel={Utility}, zlabel style={above},
+ 	ztick={\utilitylevelone,\utilityleveltwo}, enlarge z limits={upper=0.1},
+ 	zticklabels={$\textcolor{blue}{\utilitylevelone}$,$\textcolor{red}{\utilityleveltwo}$},
+ 	view={25}{30}, % angle of the 3D view
+ 	clip mode=individual, % clip plots to axes box but not text
+ 	]
+% Axes origin
+\node [below left] (origin) at (axis cs:0,0) {$0$};	
+
+	% Indifference curve (contour set) on the 3D utility function
+  	\addplot3 [
+  		very thick,
+  		contour gnuplot={levels={\utilitylevelone},labels=false,},
+  		contour/draw color={blue},
+  		samples=40, % Lower means faster but more jagged
+  	] {\utilityfunction};
+  	% Another indifference curve (contour set) on the 3D utility function
+  	\addplot3 [
+  		very thick,
+  		contour gnuplot={levels={\utilityleveltwo},labels=false,},
+  		contour/draw color={red},
+  		samples=40, % Lower means faster but more jagged
+  	] {\utilityfunction};
+  	% Utility function in 3D (in grey)
+  	\addplot3 gnuplot [,
+  		surf, mark=none,
+  		colormap={whiteblack}{gray(0cm)=(1);gray(1cm)=(0)},
+  		opacity=0.5,
+  		samples=40, % Lower means faster but more jagged
+  	] {\utilityfunction} ;
+  	\node[above] (U) at (axis cs: \xonemax,\xtwomax,10) {$U(x_1,x_2)=\utilityfuncitonEQ$};
+  	% plane corresponding to the first level of utility
+  	\addplot3 [
+  		surf,mark=none,
+  		opacity=0.2,
+  		blue,
+  		samples=4,
+  	] {\utilitylevelone};
+  	% plane corresponding to the second level of utility
+  	\addplot3 [
+  		surf,mark=none,
+  		opacity=0.2,
+  		red,
+  		samples=4,
+  	] {\utilityleveltwo};
+  \end{axis}
+  \end{tikzpicture}
+  %
+  \hspace{0.5cm}
+  \begin{tikzpicture}[scale=0.85]
+  \begin{axis}[
+		axis lines=middle,
+		view={0}{90}, % to view the 3D graph from above
+		xlabel=$x_1$, xlabel style={right },
+	 	xmin=0,	xmax=\xonemax, xtick={0,\xonemax}, enlarge x limits={upper=0.1}, domain=0:\xonemax,
+	 	ylabel=$x_2$, ylabel style={above },
+	 	ymin=0,ymax=\xtwomax, ytick={0,\xtwomax}, enlarge y limits={upper=0.1}, y domain=0:\xtwomax,
+	 	clip mode=individual, % clip plots to axes box but not text
+	  ]
+	  \node [below left] (origin) at (axis cs:0,0,0) {$0$};	% origin
+	  
+	  % Indifference curves
+	  \addplot3 [
+	  	thick,
+	  	contour gnuplot={levels={\utilitylevelone,\utilityleveltwo}},
+	  	samples=40, % Lower means faster but more jagged
+%	  	contour/labels=false, % Uncomment if you want to hide the utility levels on the ICs
+	  ] {\utilityfunction};
+	 
+
+
+	\end{axis}
+	\end{tikzpicture}
+% =============================================	
+\end{document}

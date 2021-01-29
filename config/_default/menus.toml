@@ -18,6 +18,11 @@
   url = "#stata"
   weight = 55
   
+  [[main]]
+  name = "LaTeX"
+  url = "latex"
+  weight = 65
+  
 [[main]]
   name = "CV"
   url = "files/Blanchenay_CV_Teaching.pdf"

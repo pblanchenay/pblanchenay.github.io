@@ -1,0 +1,95 @@
+%   ===================================================
+%	Plotting hypothesis test for a proportion
+%		Main: plot distribution under the null and rejection area
+%		Optional: plot distrib under alternative hyp
+%		Optional: plot Type II area and Power area
+%   Author: Patrick Blanchenay
+%   ===================================================
+\documentclass{standalone}
+% =============================================
+\usepackage{etoolbox}		% for conditions
+\usepackage{pgfplots}       % to draw plots & curves
+\pgfplotsset{compat=1.17}
+% Define Normal distribution with parameters x, mean and sd
+\pgfmathdeclarefunction{gauss}{3}{% 
+	\pgfmathparse{1/(#3*sqrt(2*pi))*exp(-((#1-#2)^2)/(2*#3^2))}%
+}
+\newbool{plotaltdistrib} \newbool{plotpower} % used fod conditions
+
+% ========= Things to change ======================
+\pgfmathsetmacro{\pzero}{.5}	% proportion under the null
+\pgfmathsetmacro{\n}{100}		% sample size
+\pgfmathsetmacro\alphacritical{1.96} % critical value (Normal distrib, 5% significance level, two-sided)
+\def\lowerdomain{.3} \def\upperdomain{.9} % choose the interval of [0,1] over which to graph
+
+\setbool{plotaltdistrib}{true} % set to true to plot distrib under alternative hyp, false if not
+\pgfmathsetmacro{\palt}{.67}	% proportion under alternative hypothesis
+
+\setbool{plotpower}{true} % set to true to plot power and Type II error, false if not
+
+
+% ========= Automatic calculations, do not change ======================
+\pgfmathsetmacro\sdpzero{sqrt(\pzero*(1-\pzero)/\n)} 	% sd(P-hat) under the null
+\pgfmathsetmacro\sdpalt{sqrt(\palt*(1-\palt)/\n)}		% sd(P-hat) under the alternative
+\pgfmathsetmacro\rejectionlowerlim{\pzero-\alphacritical*\sdpalt} % rejection region (lower critical value)
+\pgfmathsetmacro\rejectionupperlim{\pzero+\alphacritical*\sdpalt} % rejection region (upper critical value)
+\pgfmathsetmacro\maxheightzero{gauss(\pzero,\pzero,\sdpzero)} % maximum height of PDF under null
+\pgfmathsetmacro\maxheightalt{gauss(\palt,\palt,\sdpalt)} % maximum height of PDF under null
+% =============================================
+\begin{document}
+
+\begin{tikzpicture}
+	% ======= GRAPH HAPPENS HERE ===========
+	\begin{axis}[small, % makes graphs and ticks smaller
+		no markers, domain=\lowerdomain:\upperdomain, samples=200,
+		axis lines=left, xlabel=$\hat{P}$, ylabel={Density},
+		every axis y label/.style={at=(current axis.above origin),anchor=south},
+		every axis x label/.style={at=(current axis.right of origin),anchor=west},
+		height=5cm, width=12cm, % controls the proportion of the graph
+		xtick={\pzero,\rejectionlowerlim,\rejectionupperlim},
+		xticklabels={$p_0$,$p_0-\alphacritical t^*_{\alpha/2}$,$p_0+\alphacritical t^*_{\alpha/2}$}, % Comment out for numerical values
+		\ifbool{plotaltdistrib}{ % adds ticks for alternative distrib if necessary
+			extra x ticks={\palt},
+			extra x tick labels={$p_A$}, % comment out for numerical value
+		}{} %
+		ytick=\empty,
+		enlarge x limits=upper, clip=false, axis on top, 
+	]
+	
+	\ifbool{plotpower}{
+		\setbool{plotaltdistrib}{true} % plot alternative hyp distrib if plotting power
+		
+		% Type2 error shaded area
+		\addplot [fill=gray, fill opacity=0.3, draw=none, domain=\lowerdomain:\rejectionupperlim] {gauss(x,\palt,\sdpalt)} \closedcycle;
+		\node[gray!50!black,below left] at (axis cs: \rejectionupperlim,2) {Type II};
+		
+		% Power shaded area
+		\addplot [fill=green, fill opacity=0.3,draw=none, domain=\rejectionupperlim:\upperdomain] {gauss(x,\palt,\sdpalt)} \closedcycle;
+		\node[green!50!black,right] at (axis cs: \palt,2) {Power};
+	}{}% end of \ifbool{plotpower}
+	
+	% Rejection region shaded in red
+	\addplot [fill=red!20, draw=none, domain=\rejectionupperlim:\upperdomain] {gauss(x,\pzero,\sdpzero)} \closedcycle;
+	\addplot [mark=none,thick,red,dashed] coordinates {(\rejectionupperlim,0)  (\rejectionupperlim,\maxheightzero)}; % dotted red bar, height based on PDF at p0
+	
+	\addplot [fill=red!20, draw=none, domain=\lowerdomain:\rejectionlowerlim] {gauss(x,\pzero,\sdpzero)} \closedcycle;
+	\addplot [mark=none,thick,red,dashed] coordinates {(\rejectionlowerlim,0)  (\rejectionlowerlim,\maxheightzero)}; % dotted red bar, height based on PDF at p0
+
+	% Plot under the null
+	\addplot [very thick,cyan!50!black] {gauss(x,\pzero,\sdpzero
+		)};
+	\addplot [mark=none,cyan!50!black,dotted] coordinates {(\pzero,0)  (\pzero,\maxheightzero)}; % dotted bar for mean of distrib under null
+	\node[cyan!50!black,above] at (axis cs: \pzero,\maxheightzero) {Density under $H_0$};
+
+%	% Plot under the alternative hypothesis
+	\ifbool{plotaltdistrib}{
+		\addplot [very thick,black] {gauss(x,\palt,\sdpalt)};
+		\addplot [mark=none,black,dotted] coordinates {(\palt,0)  (\palt,\maxheightalt)}; % dotted bar for mean of distrib under alternative
+		\node[black,above right] at (axis cs: \palt+.02,\maxheightzero) {Density under $H_A$};
+	}{} % end of \ifbool{plotaltdistrib}
+
+	\end{axis}
+	
+\end{tikzpicture}
+% =============================================	
+\end{document}
