@@ -17,38 +17,54 @@ draft: false
 
 # {{% toc %}}
 ---
-1. Utility function in 3D and its indifference curves (requires GNUPLOT) <br />
-[[TEX](UtilityFunction3D_IndiffCurves.tex)]
-[[PDF](UtilityFunction3D_IndiffCurves.pdf)]
+
+All of the codes below require the TikZ and pgfplots packages. Some also require GNUPLOT.
+
+## Plot arbitrary utility function in 3D and its indifference curves 
+
+Requires GNUPLOT. User can set utility function, and utility levels.
+
+[Code: [TeX](UtilityFunction3D_IndiffCurves.tex)]
+[Result: [PDF](UtilityFunction3D_IndiffCurves.pdf)]
 ![This is an image](UtilityFunction3D_IndiffCurves.png)
 
-1. Indifference curves for an arbitrary utility function (requires GNUPLOT) <br />
-[[TEX](AnyIndiffCurves.tex)]
-[[PDF](AnyIndiffCurves.pdf)]
+## Indifference curves for an arbitrary utility function 
+
+Requires GNUPLOT. User can set utility function, and utility levels.
+
+[Code: [TeX](AnyIndiffCurves.tex)]
+[Result: [PDF](AnyIndiffCurves.pdf)]
 ![This is an image](AnyIndiffCurves.png)
 
-1. Decomposing a price change into income and substitution effects (requires GNUPLOT) <br />
-[[TEX](IncomeSubstEffects.tex)]
-[[PDF](IncomeSubstEffects.pdf)]
+## Decomposing a price change into income and substitution effects 
+Requires GNUPLOT. Arbitrary utility function, but optimal choices must be comptued manually.
+
+[Code: [TeX](IncomeSubstEffects.tex)]
+[Result: [PDF](IncomeSubstEffects.pdf)]
 ![This is an image](IncomeSubstEffects.png)
 
 
-1. Compensated and uncompensated demands <br />
-[[TEX](Comp_Uncomp_Demands.tex)]
-[[PDF](Comp_Uncomp_Demands.pdf)]
+## Compensated and uncompensated demands
+Compensated and uncompensated demand functions must be computed manually. Intersections are computed automatically. Numerical values must be computed manually.
+
+[Code: [TeX](Comp_Uncomp_Demands.tex)]
+[Result: [PDF](Comp_Uncomp_Demands.pdf)]
 ![This is an image](Comp_Uncomp_Demands.png)
 
-1. Long-run and short-run equilibria following change in demand<br />
-(for arbitrary demands and cost functions)<br />
-[[TEX](LRvsSRequil.tex)]
-[[PDF](LRvsSRequil.pdf)]
+## Long-run and short-run equilibria following change in demand
+User supplies marginal and average cost functions, and demands. The rest is computed automatically.
+
+[Code: [TeX](LRvsSRequil.tex)]
+[Result: [PDF](LRvsSRequil.pdf)]
 ![This is an image](LRvsSRequil.png)
 
-1. Hypothesis testing of a single proportion <br />
-[[TEX](HypTestingSingleProportion.tex)]
-[[PDF](HypTestingSingleProportion.pdf)]
- <br />
+## Hypothesis testing (of a single proportion)
  Distribution under the alternative hypothesis, and power/TypeII error, can be toggled on or off.
+
+[Code: [TeX](HypTestingSingleProportion.tex)]
+[Result: [PDF](HypTestingSingleProportion.pdf)]
+
+
 ![This is an image](HypTestingSingleProportion.png)
 
 
