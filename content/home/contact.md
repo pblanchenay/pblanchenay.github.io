@@ -17,9 +17,9 @@ autolink = false
 #   2: formspree.io
 email_form = 0
 +++
-## <i class="fa fa-clock"></i> Drop-in office hours (during term time)
-ECO220: Tuesdays, 12.30-14.30.  
-ECO372: Tuesdays, 15.00-17.00.    
+## <i class="fa fa-clock"></i> Virtual office hours (MS Teams)
+ECO372: Tuesdays, 12.30-14.30 (link on Quercus)
+ECO206: TBD.    
 Other: by appointment.
 
 ## <i class="fa fa-building"></i> Office

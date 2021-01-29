@@ -28,7 +28,7 @@ bio: I teach econometrics and microeconomics at University of Toronto.
 
 currentteaching:
   currentcourses:
-    - currentcourse: ECO220 Intro to Data Analysis & Applied Econometrics
+    - currentcourse: ECO206 Microeconomic Theory
     - currentcourse: ECO372 Data Analysis and Applied Econometrics in Practice
 
 
