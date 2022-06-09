@@ -1,0 +1,140 @@
+%   ===================================================
+%	Plot an Edgeworth box, with indifference curves, and the contract curve.
+%	-- REQUIRES GNUPLOT INSTALLED.
+
+% 	Utility function for each consumer is arbitrary.
+%	The graph also displays three arbitrary intersection points for ICs.
+%	The ICs are computed automatically based on the intersection points provided.
+% 	
+%	The user must compute manually the equation of the contract curve.
+
+%	Author: Patrick Blanchenay
+%   ===================================================
+
+\documentclass{standalone}
+% =============================================
+\usepackage{tikz}               % to draw things
+\usepackage{pgfplots}           % to draw plots & curves
+\pgfplotsset{compat=1.8}
+\usetikzlibrary{calc,arrows}  % to find and define intersections of curves, equilibria...
+
+\tikzset{ % to make dots on the graph
+dot/.style = {circle, fill, minimum size=#1,
+           inner sep=0pt, outer sep=0pt},
+dot/.default = 6pt % size of the circle diameter 
+}
+% =============================================
+\begin{document}
+
+\begin{tikzpicture}[,
+%
+% 
+% =======THINGS TO CHANGE =========== 
+declare function={
+	UA(\xa,\ya)     =   sqrt(\xa * \ya);      			% Arbitrary A's utility function
+	UB(\xb,\yb)     =   (\xb)^(1/3)*(\yb)^(2/3);      % Arbitrary B's utility function
+	contractcurve(\xa) =  \Qy*\xa / (2*\Qx - \xa); % Equation of Contract Curve (must be computed manually)
+}]
+
+\def\Qx{15} % Total quantity of good x (horizontal good)
+\def\Qy{10} % Total quantity of good y (vertical good)
+
+% Points where indifference curves should intersect -- cordinates are in A's frame of reference
+\def\xC{1} \def\yC{3}	% Point C (not on the CC)
+\def\xD{12} \def\yD{2}	% Point D (not on the CC)
+\def\xE{\Qx*0.8} \pgfmathsetmacro\yE{contractcurve(\xE)}	% Point E (on the CC), at 80% of width of box
+
+% ===================================
+
+
+% =======Graphs happens here =========== 
+
+% Compute utility levels for each consumer, at each intersection point.
+\pgfmathsetmacro\UAC{UA(\xC,\yC)} \pgfmathsetmacro\UBC{UB(\Qx-\xC,\Qy-\yC)} 
+\pgfmathsetmacro\UAD{UA(\xD,\yD)} \pgfmathsetmacro\UBD{UB(\Qx-\xD,\Qy-\yD)} 
+\pgfmathsetmacro\UAE{UA(\xE,\yE)} \pgfmathsetmacro\UBE{UB(\Qx-\xE,\Qy-\yE)} 
+
+
+% 	================ 
+% 	CONSUMER A 
+%	================
+\begin{axis}[axis equal image=true, % Preserve correct proportion of Edgeworth box
+	axis lines=middle,
+	view={0}{90}, % to view the 3D graph from above
+	xlabel=$x_A$, xlabel style={right },
+ 	xmin=0,	xmax=\Qx+1, xtick=\empty,  domain=0:\Qx+1,
+	 	xticklabel pos=top,
+ 	ylabel=$y_A$, ylabel style={above },
+ 	ymin=0,ymax=\Qy+1, ytick=\empty,  y domain=0:\Qy+1,
+ 	clip mode=individual, % clip plots to axes box but not text
+]
+
+	% 	================ POINTS OF INTEREST =============
+	% Origins
+	\node [label={below left:$O_A$}] (origin) at (axis cs:0,0,0) {};	% origin for A
+	\node [label={above right:$O_B$}] (originB) at (axis cs:\Qx,\Qy,0) {};	% origin for B
+	
+	% max quantities
+	\node [label={above right:$\Qx$}] (maxQx) at (axis cs:\Qx,0,0) {};	
+	\node [label={above right:$\Qy$}] (maxQy) at (axis cs:0,\Qy,0) {};
+	
+	% Coordinates at intersection points
+	\coordinate (C) at (axis cs:\xC,\yC,0) ;	% point C
+	\coordinate (D) at (axis cs:\xD,\yD,0) ;	% point D
+	\coordinate (E) at (axis cs:\xE,\yE,0) ;	% point E
+	
+	
+	% 	================ CURVES =============
+	% Contract curve, including end points
+	\addplot[very thick, green!50!black,domain=0:\Qx,smooth] {contractcurve(x)}; % Contract Curve
+	
+	% Indifference curves of consumer A, going through points C, D, and E
+	\addplot3 [
+	  	dashed,
+	  	contour gnuplot={levels={\UAC,\UAD,\UAE}},
+	  	samples=30, % Lower means faster but more jagged
+	  	contour/labels=false, % Comment out if you want to display the utility levels on the ICs
+	  	contour/draw color={purple}, % Comment out if you want each IC to be of a different color (from blue to red)
+	] {UA(x,y)};
+
+\end{axis}
+
+% 	================ 
+% 	CONSUMER B
+%	================
+\begin{axis}[axis equal image=true, % Preserve correct proportion of Edgeworth box
+	axis lines=middle,
+	view={0}{90}, % to view the 3D graph from above
+    anchor=north east, % Shift the axis so its origin is at (originB)
+	at={(originB)}, 
+    rotate around={180:(current axis.origin)}, % Rotate around its origin
+	xlabel=$x_B$, xlabel style={left }, xtick=\empty,
+   	xmin=0,	xmax=\Qx+1,  domain=0:\Qx+1,
+   	ylabel=$y_B$, ylabel style={below }, ytick=\empty,
+   	ymin=0,ymax=\Qy+1,  y domain=0:\Qy+1,
+ ]
+ 
+	% Indifference curves of consumer B, going through points C, D, and E
+	\addplot3 [
+	  	dashed,
+	  	contour gnuplot={levels={\UBC,\UBD,\UBE}},
+	  	samples=30, % Lower means faster but more jagged
+	  	contour/labels=false, % Comment out if you want to display the utility levels on the ICs
+	  	contour/draw color={blue}, % Comment out if you want each IC to be of a different color (from blue to red)
+	] {UB(x,y)};
+\end{axis}
+
+% Draw intersection points, and contract curve end points at the end, so they appear on top of curves
+\node [label={above right:$C$},dot]  at (C) {};	% point C
+\node [label={above right:$D$},dot]  at (D) {};	% point D
+\node [label={right:$E$},dot]  at (E) {};	% point E
+
+% Contract curve end points
+\node[dot,green!50!black] at (origin) {};
+\node[dot,green!50!black] at (originB) {};
+
+\end{tikzpicture} 
+
+
+% =============================================	
+\end{document}

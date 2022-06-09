@@ -58,6 +58,20 @@ User supplies marginal and average cost functions, and demands. The rest is comp
 [Result: [PDF](LRvsSRequil.pdf)]
 ![This is an image](LRvsSRequil.png)
 
+## Consumer surplus, producer surplus, and deadweight loss under a price floor
+User supplies arbitrary demand and supply functions, and the price floor, higher than the original equilibrium price. The rest is computed automatically.
+
+[Code: [TeX](CS_PS_DWL_pricefloor.tex)]
+[Result: [PDF](CS_PS_DWL_pricefloor.pdf)]
+![This is an image](CS_PS_DWL_pricefloor.png)
+
+## Edgeworth Box
+Requires GNUPLOT. User supplies arbitrary utility functions, and points where the indifference curves should intersect, and the contract curve. The rest is computed automatically.
+
+[Code: [TeX](EdgeworthContractCurve.tex)]
+[Result: [PDF](EdgeworthContractCurve.pdf)]
+![This is an image](EdgeworthContractCurve.png)
+
 ## Hypothesis testing (of a single proportion)
  Distribution under the alternative hypothesis, and power/TypeII error, can be toggled on or off.
 
