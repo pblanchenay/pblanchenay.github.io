@@ -16,11 +16,11 @@ autolink = false
 #   1: Netlify (requires that the site is hosted by Netlify)
 #   2: formspree.io
 email_form = 0
+
+
 +++
 ## <i class="fa fa-clock"></i> Virtual office hours (MS Teams)
-ECO372: Tuesdays, 12.30-14.30 (link on Quercus)
-ECO206: TBD.    
-Other: by appointment.
+Currently, only by appointment.
 
 ## <i class="fa fa-building"></i> Office
 GE348, 3rd floor of [Max Gluskin House](http://map.utoronto.ca/utsg/building/104).
@@ -36,5 +36,5 @@ Canada
  [patrick.blanchenay@utoronto.ca](mailto:patrick.blanchenay@utoronto.ca) 
 (Students, please check "Email Policy" in your course syllabus.)
 
-## <i class="fa fa-scroll"></i> Recommendation letters
+## <i class="fa fa-scroll"></i> Reference letters
 Instructions for [academic references](academicreferences/).
