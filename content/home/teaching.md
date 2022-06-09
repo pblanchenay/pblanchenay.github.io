@@ -14,18 +14,15 @@ subtitle = "All course material is posted on [Quercus](https://q.utoronto.ca/)."
 weight = 60
 
 +++
-## ECO206Y Microeconomic Theory
-* [ECO206Y on Quercus](https://q.utoronto.ca/courses/183492)
-* Syllabus 2020-21 (upcoming)
+# ECO204 Microeconomic Theory (Commerce) 
+* [Quercus](https://q.utoronto.ca/courses/237096/)
+* [Syllabus 2021-22](eco204/admin/ECO204Y1_Blanchenay_2021-22_Syllabus.pdf)
 
-## ECO372H Data Analysis and Applied Econometrics in Practice
-* ECO372H1F (Fall 2020):  [Quercus site](https://q.utoronto.ca/courses/182209) &mdash;   [Syllabus](eco372/ECO372H1_Blanchenay_Fall_2020_syllabus.pdf)
-* ECO372H1S (Winter 2021):  [Quercus site](https://q.utoronto.ca/courses/204242) &mdash;  [Syllabus](eco372/ECO372H1_Blanchenay_Winter2021_syllabus.pdf)
-* Old syllabus [Winter 2020](eco372/previousyears/ECO372H1_Blanchenay_Winter_2020_syllabus.pdf)
 
 
 ## Previous years
+* ECO206Y Microeconomic Theory
 * ECO220 Introduction to Data Analysis and Applied Econometrics
-* ECO204 Microeconomic Theory (Commerce)
+* ECO372 Data Analysis and Applied Econometrics in Practice
 * MMI1090 Technology, Strategy, and Policy
 
