@@ -1,6 +1,6 @@
 ---
 title: 'Academic references'
-subtitle: 'Directions for students who want me to write a recommendation letter'
+subtitle: 'Guidance for students who want me to write a reference letter'
 summary: Rules for academic references.
 #authors:
 #- admin
@@ -32,21 +32,11 @@ projects: []
 
 
 ---
-I am in general happy to write a reference letter for former students; however, it takes time. To make sure you know what you are asking, and whether it would actually help your application, here is some guidance. Please read in full.
+I am in general happy to write a reference letter for former students who have done well in my courses (ranking in the top 20%); however, it takes time. To make sure you know what you are asking, and whether it would actually help your application, here is some guidance. Please read in full.
 
-{{% toc %}}
+## What are reference letters for? What would it contain?
 
-## Am I willing to write a letter for you?
-
-* In general yes, but I reserve the right to refuse writing a letter for you (i.e. it's not guaranteed).
-* If I refuse it is usually for one of these reasons:
-	* I believe it would not help your application.
-	* I do not have enough time before the deadline. **Allow 3 weeks before the nearest deadline.**
-* If you have never *completed* a course with me, I am in general very reluctant to write for you. If you are a current student, I can only write if I have sufficient info about you, which is rare for current students.
-
-## What do I put in the reference letter?
-
-The goal of a reference letter is to provide accurate information about you to the selection committee. (It is not to get you into the program at all costs.)
+Selection committees are usually interested in admitting students who have the skills and motivation to succeed in the program. The goal of a reference letter is to provide accurate information about you to that selection committee. (It is not to get you into the program at all costs.)
 
 - In any reference letter I will, at the minimum, mention the grade you received in my course, and how it compares to other students, current and past.
 - I will also provide any type of information that I deemed relevant for the committee, elements that indicate how well you would do in the program, how motivated you are, how much you would benefit from the program, and how the program would benefit to have you as a student.
@@ -57,9 +47,30 @@ The goal of a reference letter is to provide accurate information about you to t
 
 A reference letter will increase your chances if it can provide information about you that is 1/ positive, 2/  specific and credible, and 3/ relevant to the program you are applying to.
 
-- If you didn't do really well in my course, it is in your interest to ask an instructor for a course you did particularly well in.
-- If you took my course, but the only thing I know about you are your grades, the letter would not be very specific or informative. It might be in your interest to ask another instructor who knows you better.
-- If you are applying to a program that is totally unrelated to the course you took with me, my letter will not be very relevant to the selection committee. You are better off asking an instructor that can comment on the skills/topics that are particularly relevant for that program.
+1. You should have done particularly well in my course, and appear **motivated**. 
+    - Usually that means ranking in the top 20% of students who took that course with me. Depending on the course that could mean an 78/100, or a 90/100. If you're unsure, you can ask.
+	- I will also have a look at your other course grades to see if your performance in my course is a fluke or if you are doing generally well.
+	- If you didn't do really well in my course, it really is in your interest to ask instead the instructor of a course you did particularly well in. A letter about an average performance will HARM your application.
+	
+1. I should be able to provide information that is **specific** and would stand out to a selection committee.
+    * In any given course, I typically teach between 180 and 350 students per session. Did you come regularly to office hours? Did we have any meaningful interactions?
+	* If the only thing I know about you are your grades, the letter cannot be very specific or informative; it is going to be very generic and has little chance of helping your application. It might be in your interest to ask another instructor who knows you better.
+	
+1. I should be able to comment on aspects of your application that are **relevant** for the program you are applying to.
+	- Is the course you took with me relevant for the program? Does it highlight some ability of yours that would help you succeed in the program?
+	- If you are applying to a program that is totally unrelated to the course you took with me, it is harder to make my letter relevant to the selection committee. Are there particular skills you acquired in my course that would be useful for *that particular program*? You might be better off asking an instructor that can comment on the skills/topics that are particularly relevant for that program.
+
+
+## Am I willing to write a letter for you?
+
+* In general yes if you did well in my course (ranking in the top 20%), but I reserve the right to refuse writing a letter for you (i.e. it's not guaranteed).
+* If I refuse it is usually for one of these reasons:
+	* I believe it would not help your application (see the 3 points above).
+	* I believe your application is not fit for a particular program (e.g. you scored in top 25% in my course and are applying to a very selective program).
+	* I do not have enough time before the deadline. **Allow 3 weeks before the nearest deadline.**
+* If you have never *completed* a course with me, I am in general very reluctant to write for you. If you are a current student, I can only write if I have sufficient info about you, which is rare for current students.
+
+
 
 ## You have read all this and would like me to write a letter. What should you do?
 - Make sure to contact me well in advance of deadlines. Most postgraduate programs have deadlines between early December to early February.
