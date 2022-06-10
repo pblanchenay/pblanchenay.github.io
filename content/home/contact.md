@@ -37,4 +37,4 @@ Canada
 (Students, please check "Email Policy" in your course syllabus.)
 
 ## <i class="fa fa-scroll"></i> Reference letters
-Instructions for [academic references](academicreferences/).
+Instructions for former students with to get an [academic reference](academicreferences/) from me.
