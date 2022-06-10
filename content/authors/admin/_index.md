@@ -29,7 +29,7 @@ bio: I teach econometrics and microeconomics at University of Toronto.
 currentteaching:
   currentcourses:
     - currentcourse: ECO204 Microeconomic Theory (Commerce)
-	- currentcourse: PPG1008 Program Evaluation (Munk School, MPP)
+    - currentcourse: PPG1008 Program Evaluation (Munk School, MPP)
 
 
 
