@@ -1,0 +1,48 @@
+%   ===================================================
+%	Plot indifference curves for arbitrary utility function
+%   You must have GNUPLOT installed on your computer
+%       and LaTeX must be able to call it (--shell-escape)
+%   Author: Patrick Blanchenay
+%   ===================================================
+
+\documentclass{standalone}
+% =============================================
+\usepackage{pgfplots}           % to draw plots & curves (also loads TiKz)
+\pgfplotsset{compat=1.8}
+% =============================================
+\begin{document}
+
+% ========= Things to change ======================
+\def\utilityfunction{x^.5 + y} % Utility as a function of x (horizontal) and y (vertical)
+%\def\utilityfunctionEQ{\sqrt{x_1}+ \sqrt{x_2}} % How the equation would be displayed
+\def\xonemax{10} % max value of x1
+\def\xtwomax{10} % max value of x2
+\def\utilitylevels{4,6,9} % utility levels that you want to plot, separated by commas
+
+% ======= GRAPH HAPPENS HERE ===========
+
+\begin{tikzpicture}
+\begin{axis}[
+	axis lines=middle,
+	view={0}{90}, % to view the 3D graph from above
+	xlabel=$x_1$, xlabel style={right },
+ 	xmin=0,	xmax=\xonemax, xtick={0,\xonemax}, enlarge x limits={upper=0.1}, domain=0:\xonemax,
+ 	ylabel=$x_2$, ylabel style={above },
+ 	ymin=0,ymax=\xtwomax, ytick={0,\xtwomax}, enlarge y limits={upper=0.1}, y domain=0:\xtwomax,
+ 	clip mode=individual, % clip plots to axes box but not text
+]
+\node [below left] (origin) at (axis cs:0,0,0) {$0$};	% origin
+
+% Indifference curves
+\addplot3 [
+  	thick,
+  	contour gnuplot={levels={\utilitylevels}},
+  	samples=200, % Lower means faster but more jagged
+  	contour/labels=false, % Comment out if you want to display the utility levels on the ICs
+  	contour/draw color={purple}, % Comment out if you want each IC to be of a different color (from blue to red)
+] {\utilityfunction};
+
+\end{axis}
+\end{tikzpicture}
+% =============================================	
+\end{document}

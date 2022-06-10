@@ -1,0 +1,97 @@
+%   ===================================================
+%   Decomposing a price change into income effect
+%       and substitution effect
+%   You must have GNUPLOT installed on your computer
+%       and LaTeX must be able to call it (--shell-escape)
+%   Author: Patrick Blanchenay
+%   ===================================================
+
+\documentclass{standalone}
+% =============================================
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.8}
+% =============================================
+\begin{document}
+\begin{tikzpicture}
+	% ========= Things to change ======================
+	\def\xmax{60} \def\ymax{120} % maximum values for quantity and price on the graph (used to draw the axes) 
+	\def\oldprice{4} % old price
+	\def\newprice{5} % new price
+	\def\utilityfunction{20*x^0.5+y} % utility as a function of x (horizontal good) and y (vertical good), here quasilinear in good 1 (no income effect in good1)
+	\def\priceone{4} 
+	\def\priceoneprime{5}
+	\def\pricetwo{2}
+	\def\income{200}
+	% ========= Compute those manually ======================
+	\def\oldutilitylevel{150} % original level of utility (indirect utility)
+	\def\newutilitylevel{140} % new level of utility (indirect utility)
+	\def\compensatedincome{220} % compute this manually (income needed under new prices to reach old utility level)
+	\def\xoneinitial{25} \def\xtwoinitial{50} % Initial bundle
+	\def\xonefinal{16} \def\xtwofinal{60} % Final bundle
+	\def\xonecomp{16} \def\xtwocomp{70} % Compensated bundle
+	
+	% ========= Graph begins here ======================
+	\begin{axis}[ scale=1.75, % change the scale of the graph (default = 1)
+		axis lines=middle,
+		view={0}{90}, % it's a 3D graph that we are viewing from above, to see indiff curves
+		xlabel=$x_1$, xlabel style={right },
+		 ylabel=$x_2$, ylabel style={above },
+		xmin=0,ymin=0,xmax=\xmax,ymax=\ymax,
+		enlarge y limits={upper=0.1},
+		enlarge x limits={upper=0.1},
+		xtick={\xoneinitial,\xonefinal}, % or xtick={0,20,...,\xmax},
+		xticklabels={$x_1^{i}$,$x_1^{f}$} , 
+		ytick={\xtwoinitial,\xtwofinal,\xtwocomp}, % or xtick={0,20,...,\xmax},
+		yticklabels={$x_2^{i}$,$x_2^{f}$,$x_2^{SE}$} , % Comment out to display the numerical values
+		clip mode=individual, % clip plots to axes box but not text
+		]
+		% Axes origin
+		\node [below left] (origin) at (axis cs:0,0) {$0$};	
+		
+		% BUDGET CONSTRAINTS
+		\addplot[color=red!40, thick,	domain=0:\income/\priceone] { \income/\pricetwo-\priceone/\pricetwo * x  }
+			node[pos=0.95,sloped,above,font=\small] {Old BC}; % Old BC
+		\addplot[color=blue!40,	thick, domain=0:\income/\priceoneprime] { \income/\pricetwo-\priceoneprime/\pricetwo * x  }
+			node[pos=0.9,sloped,below,font=\small] {New BC}; % New BC
+		\addplot[color=purple!40,	dashed,thick, domain=0:\compensatedincome/\priceoneprime] { \compensatedincome/\pricetwo-\priceoneprime/\pricetwo * x  }
+			node[pos=0.85,sloped,below,font=\small] {Compensated BC}; % Compensated BC
+			
+		% INDIFFERENCE CURVES	
+		\addplot3 [
+			very thick, domain=0:\xmax,y domain=0:\ymax,
+			contour/labels=false, % Comment out if you want to display the utility levels
+			contour gnuplot={levels={\oldutilitylevel,\newutilitylevel}}, % indifference curves utility levels
+			samples=80, % lower means more jagged indifference curves, but faster to display
+		] {\utilityfunction };
+		
+		% Choice bundles
+		\draw [ fill] (axis cs:\xoneinitial,\xtwoinitial,0) circle (2pt) node [label=above right:$x^{initial}$]  (i) {}; % initial bundle
+		\draw [ fill] (axis cs:\xonefinal,  \xtwofinal,0) circle (2pt) node [label=right:{$x^{final}$} ] (f) {}; % final bundle
+		\draw [ fill] (axis cs:\xonecomp,  \xtwocomp,0) circle (2pt) node [label=above right:$x^{SE}$] (SE) {}; % hypothetical compensated bundle
+		
+		% project bundles on 
+		\coordinate (verticalaxis) at (axis cs:0,\ymax); 
+		\coordinate (horizontalaxis) at (axis cs:\xmax,0); 
+		\draw[thick,gray,dotted] (f -| verticalaxis)  -- (f); %  -- (f |- horizontalaxis) ; omitted because of overlap
+		\draw[thick,gray,dotted] (i -| verticalaxis) -- (i) -- (i |- horizontalaxis) ; %
+		\draw[thick,gray,dotted] (SE -| verticalaxis) -- (SE) -- (SE |- horizontalaxis); % Project (f)
+		
+		% EFFECTS for Good 1 (no income effect in this case)
+		\draw [>=stealth,->,shorten >= 1pt,shorten <= 1pt,thick] (axis cs: \xoneinitial,20,0) 
+			-- (axis cs: \xonefinal,20,0) node [midway,above] {TE1};
+		\draw [>=stealth,->,shorten >= 1pt,shorten <= 1pt,thick,green!50!black] (axis cs: \xoneinitial,15,0)
+			-- (axis cs: \xonefinal,15,0) node [midway,below] {SE1};
+		
+		% EFFECTS for Good 2
+		\draw [>=stealth,->,shorten >= 1pt,shorten <= 1pt,thick] (axis cs: 2,\xtwoinitial,0) 
+			-- (axis cs: 2,\xtwofinal,0) node [midway,right] {TE2};
+		\draw [>=stealth,->,shorten >= 1pt,shorten <= 1pt,thick,green!50!black] (axis cs: 10,\xtwoinitial,0)
+			-- (axis cs: 10,\xtwocomp,0) node [near start,right] {SE2};
+		\draw [>=stealth,->,shorten >= 1pt,shorten <= 1pt,thick,orange!50!black] (axis cs: 6,\xtwocomp,0)
+			-- (axis cs: 6,\xtwofinal,0) node [midway,right] {IE2};
+	
+	\end{axis}
+\end{tikzpicture}
+% =============================================	
+\end{document}
