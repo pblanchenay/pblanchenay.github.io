@@ -18,9 +18,13 @@ weight = 60
 * [Quercus](https://q.utoronto.ca/courses/237096/)
 * [Syllabus 2021-22](eco204/admin/ECO204Y1_Blanchenay_2021-22_Syllabus.pdf)
 
+# PPG1008 Program Evaluation (Munk)
+[MPP Program](https://munkschool.utoronto.ca/publicpolicy/programs/master-of-public-policy-program/), first year. Co-instructor: Prof. Radner.
+* [Quercus](https://q.utoronto.ca/courses/254633)
+* [Syllabus Winter 2022](<ppg1008/Syllabus - PPG1008 - 02 Feb 2022.pdf>)
 
 
-## Previous years
+# Previous years
 * ECO206Y Microeconomic Theory
 * ECO220 Introduction to Data Analysis and Applied Econometrics
 * ECO372 Data Analysis and Applied Econometrics in Practice
