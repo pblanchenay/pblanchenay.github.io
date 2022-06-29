@@ -10,15 +10,16 @@ authors:
 superuser: true
 
 # Role/position
-role: Assistant Professor, Teaching Stream (CLTA)
+role: Economics instructor
 
 # Organizations/Affiliations
 organizations:
-- name: Dept of Economics, U of Toronto
-  url: "https://www.economics.utoronto.ca"
+- name: Univ. of Toronto
+  url: "https://www.utoronto.ca"
+#
 
 # Short bio (displayed in user profile at end of posts)
-bio: I teach econometrics and microeconomics at University of Toronto.
+bio: I teach  microeconomics and econometrics at the University of Toronto.
 
 #interests:
 #- Artificial Intelligence
@@ -66,7 +67,7 @@ social:
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 - icon: cv
   icon_pack: ai
-  link: files/Blanchenay_CV_Teaching_2022Feb.pdf
+  link: files/Blanchenay_CV_Teaching_2022Jun.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ""
@@ -77,4 +78,4 @@ email: ""
 # - Researchers
 # - Visitors
 ---
-I am an assistant professor teaching stream (CLTA) at University of Toronto's [Department of Economics](http://www.economics.utoronto.ca). I teach empirical methods (econometrics, data analysis) and microeconomics.  Before joining University of Toronto, I worked at the [OECD](https://www.oecd.org), in particular on productivity dispersion and wage inequality.
+I teach empirical methods (econometrics, data analysis) and microeconomics at the University of Toronto (St-George and Scarborough campuses).  I have taught both in large classes (180+) and smaller classes, using a variety of methods. Before joining UofT, I worked at the [OECD](https://www.oecd.org), in particular on productivity dispersion and wage inequality.

@@ -17,24 +17,29 @@ autolink = false
 #   2: formspree.io
 email_form = 0
 
-
-+++
-## <i class="fa fa-clock"></i> Virtual office hours (MS Teams)
-Currently, only by appointment.
+# Commented out from page:
+## <i class="fa fa-scroll"></i> Reference letters
+# Instructions for former students with to get an [academic reference](academicreferences/) from me.
 
 ## <i class="fa fa-building"></i> Office
-GE348, 3rd floor of [Max Gluskin House](http://map.utoronto.ca/utsg/building/104).
+#GE348, 3rd floor of [Max Gluskin House](http://map.utoronto.ca/utsg/building/104).
 
 ## <i class="fa fa-map-marker" aria-hidden="true"></i>  Address
-Department of Economics  
-150 St George st.  
-Toronto M5S 3G7  
-Canada
+#Department of Economics  
+#150 St George st.  
+#Toronto M5S 3G7  
+#Canada
+
+
+
++++
+
 
 ## <i class="fa fa-envelope"></i> Email
 
  [patrick.blanchenay@utoronto.ca](mailto:patrick.blanchenay@utoronto.ca) 
-(Students, please check "Email Policy" in your course syllabus.)
+(Students, please check your course syllabus for contact policy.)
 
-## <i class="fa fa-scroll"></i> Reference letters
-Instructions for former students with to get an [academic reference](academicreferences/) from me.
+## <i class="fa fa-clock"></i> Office hours 
+Please check your course syllabus for contact policy.
+
